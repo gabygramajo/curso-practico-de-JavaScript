@@ -53,11 +53,12 @@ function areaCirculo(r) {
 
 // validar entradas
 function validarInput(input) {
-    return ( Number(input) >= 1 && 
-            !isNaN(input) && 
-            input.length >= 1
-            ) 
-            ? true : false;
+    return ( 
+      Number(input) >= 1 && 
+      !isNaN(input) && 
+      input.length >= 1
+      ) 
+      ? true : false;
 }
 
 // perimetro cuadrado
@@ -94,10 +95,11 @@ function calcularPerimetroTriangulo() {
   const B = document.querySelector("#ladoB").value;
   const C = document.querySelector("#ladoC").value;
 
-  if (validarInput(A) && 
-      validarInput(B) && 
-      validarInput(C)) {
-
+  if (
+    validarInput(A) && 
+    validarInput(B) && 
+    validarInput(C)
+  ) {
     const resultado = document.querySelector(".resultado__perimetro--triangulo");
     const perimetro = perimetroTriangulo( Number(A), Number(B), Number(C) );
     resultado.innerHTML = `Perímetro: ${perimetro} cm.`
@@ -169,10 +171,12 @@ function calcularAlturaTriangulo() {
   const lado2 = document.querySelector("#iso-lado-2").value;
   const base = document.querySelector("#iso-base").value;
 
-  if (validarInput(lado1) && 
-      validarInput(lado2) && 
-      validarInput(base) && 
-      lado1 === lado2 ) {
+  if (
+    validarInput(lado1) && 
+    validarInput(lado2) && 
+    validarInput(base) && 
+    lado1 === lado2
+  ) {
 
     const resultado = document.querySelector(".resultado__altura-triangulo");
     const altura = alturaTrianguloIsoseles( 

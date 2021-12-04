@@ -53,8 +53,11 @@ function areaCirculo(r){
 
 // validar entradas
 function validarInput(input){
-  // if( Number(input) >= 1 && !isNaN(input) && input.length >= 1)
-    return ( Number(input) >= 1 && !isNaN(input) && input.length >= 1) ? true : false;
+    return ( Number(input) >= 1 && 
+            !isNaN(input) && 
+            input.length >= 1
+            ) 
+            ? true : false;
 }
 
 // perimetro cuadrado
@@ -93,11 +96,13 @@ function calcularPerimetroTriangulo(){
   const B = document.querySelector("#ladoB").value;
   const C = document.querySelector("#ladoC").value;
 
-  if( validarInput(A) && validarInput(B) && validarInput(C) ){
+  if( validarInput(A) && 
+      validarInput(B) && 
+      validarInput(C) 
+  ){
     const resultado = document.querySelector(".resultado__perimetro--triangulo");
     const perimetro = perimetroTriangulo( Number(A), Number(B), Number(C) );
     resultado.innerHTML = `Perímetro: ${perimetro} cm.`
-
   }
   else
     alert("Debes ingresar sólo números");
@@ -158,3 +163,38 @@ btnCalcularCircuferenciaCirculo.addEventListener("click", calcularCircuferenciaC
 
 const btnCalcularAreaCirculo = document.querySelector("#calcularAreaCirculo");
 btnCalcularAreaCirculo.addEventListener("click", calcularAreaCirculo);
+
+// Triángulo isóseles altura
+
+function alturaTrianguloIsoseles(L1, L2, base){
+  return Math.sqrt( 
+    Math.pow(L1, 2) - Math.pow( (base/2) , 2)
+  );
+}
+
+function calcularAlturaTriangulo(){
+  const lado1 = document.querySelector("#iso-lado-1").value;
+  const lado2 = document.querySelector("#iso-lado-2").value;
+  const base = document.querySelector("#iso-base").value;
+
+  if( validarInput(lado1) && 
+      validarInput(lado2) && 
+      validarInput(base) && 
+      lado1 === lado2 )
+  {
+
+    const resultado = document.querySelector(".resultado__altura-triangulo");
+    const altura = alturaTrianguloIsoseles( 
+      Number(lado1), 
+      Number(lado2), 
+      Number(base) 
+    );
+    resultado.innerHTML = `Altura: ${altura} cm.`
+
+  }
+  else
+    alert("Debes ingresar sólo números y 2 lados iguales");
+}
+
+const bntCalcularAlturaTriangulo = document.querySelector("#calcularAlturaTriangulo");
+bntCalcularAlturaTriangulo.addEventListener("click", calcularAlturaTriangulo);

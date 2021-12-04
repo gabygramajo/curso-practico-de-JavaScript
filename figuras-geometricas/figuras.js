@@ -158,6 +158,7 @@ btnCalcularAreaCirculo.addEventListener("click", calcularAreaCirculo);
 // Triángulo isóseles altura
 
 function alturaTrianguloIsoseles(L1, L2, base) {
+  // Utilizando Pitágoras
   return Math.sqrt( 
     Math.pow(L1, 2) - Math.pow( (base/2) , 2)
   );

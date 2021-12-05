@@ -69,7 +69,9 @@ function calcularPerimetroCuadrado() {
 
   if (validarInput(L)) {
     const perimetro = perimetroCuadrado( Number(L) )
+
     resultado.innerHTML = `Perímetro: ${perimetro} cm.` 
+
   } else alert("Debes ingresar sólo números");
 }
 const btnCalcularPerimetroCuadrado = document.getElementById("calcularPerimetroCuadrado");
@@ -82,7 +84,9 @@ function calcularAreaCuadrado() {
 
   if (validarInput(L)) {
     const area = areaCuadrado( Number(L) );
+
     resultado.innerHTML = `Área: ${area} cm².`;
+
   } else alert("Debes ingresar sólo números");
 }
 const btnCalcularAreaCuadrado = document.getElementById("calcularAreaCuadrado");
@@ -102,6 +106,7 @@ function calcularPerimetroTriangulo() {
   ) {
     const resultado = document.querySelector(".resultado__perimetro--triangulo");
     const perimetro = perimetroTriangulo( Number(A), Number(B), Number(C) );
+
     resultado.innerHTML = `Perímetro: ${perimetro} cm.`
 
   } else alert("Debes ingresar sólo números");
@@ -116,7 +121,9 @@ function calcularAreaTriangulo() {
   if (validarInput(b) && validarInput(h)) {
     const resultado = document.querySelector(".resultado__area--triangulo");
     const area = areaTriangulo( Number(b), Number(h) );
+
     resultado.innerHTML = `Área: ${area} cm².`;
+
   } else alert("Debes ingresar sólo números");
 }
 
@@ -135,6 +142,7 @@ function calcularCircuferenciaCirculo() {
   if (validarInput(r)) {
     const resultado = document.querySelector(".resultado__perimetro--circulo");
     const perimetro = circunferenciaCirculo( Number(r) );
+
     resultado.innerHTML = `Circuferencia: ${perimetro} cm.`
 
   } else alert("Debes ingresar sólo números");
@@ -146,8 +154,10 @@ function calcularAreaCirculo() {
   
   if (validarInput(r)) {
     const resultado = document.querySelector(".resultado__area--circulo");
+
     const area = areaCirculo( Number(r) );
     resultado.innerHTML = `Área: ${area} cm².`;
+
   } else alert("Debes ingresar sólo números");
 }
 
@@ -162,7 +172,7 @@ btnCalcularAreaCirculo.addEventListener("click", calcularAreaCirculo);
 function alturaTrianguloIsoseles(L1, L2, base) {
   // Utilizando Pitágoras
   return Math.sqrt( 
-    Math.pow(L1, 2) - Math.pow( (base/2) , 2)
+    Math.pow(L1, 2) - (Math.pow(base , 2) / 4)
   );
 }
 
@@ -175,17 +185,21 @@ function calcularAlturaTriangulo() {
     validarInput(lado1) && 
     validarInput(lado2) && 
     validarInput(base) && 
-    lado1 === lado2
+    lado1 === lado2 &&
+    (
+      (Number(lado1) + Number(lado2)) > Number(base)
+    )
   ) {
-
     const resultado = document.querySelector(".resultado__altura-triangulo");
+
     const altura = alturaTrianguloIsoseles( 
       Number(lado1), 
       Number(lado2), 
       Number(base) 
     );
 
-    resultado.innerHTML = `Altura: ${altura} cm.`
+    resultado.innerHTML = `Altura: ${altura} cm.`;
+
   } else alert("Debes ingresar sólo números y 2 lados iguales");
 }
 

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Figuras Geométricas | Curso Pŕactico de Javascript en Platzi</title>
+  <link rel="stylesheet" href="figuras.css">
+</head>
+<body>
+  
+  <header>
+    <h1>Figuras Geométricas</h1>
+    <p>Este es el primer taller del curso práctico de Javascript.</p>
+  </header>
+
+  <section>
+    <h2>Calcula el área y perímetro de un cuadrado.</h2>
+
+    <form>
+
+      <label for="inputCuadrado">
+        Escribir la medida de cada lado del cuadrado
+      </label>
+      <input 
+        id="inputCuadrado" 
+        type="number" 
+        min="1"
+      >
+      <button type="button" id="calcularPerimetroCuadrado">
+        calcular el perímetro
+      </button>
+
+      <button type="button" id="calcularAreaCuadrado">
+        calcular el área
+      </button>
+
+    </form>
+    <div class="resultado">
+      <p class="resultado__perimetro--cuadrado">Perímetro: </p>
+      <p class="resultado__area--cuadrado">Área: </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Calcula el área y perímetro de un triágulo.</h2>
+
+    <form>
+
+      <div class="perimetro-triangulo">
+        <label for="ladoA">
+          Medida del lado A
+        </label>
+        <input 
+          id="ladoA" 
+          type="number" 
+          min="1"
+        >
+  
+        <label for="ladoB">
+          Medida del lado B
+        </label>
+        <input 
+          id="ladoB" 
+          type="number" 
+          min="1"
+        >
+  
+        <label for="ladoC">
+          Medida del lado C
+        </label>
+        <input 
+          id="ladoC" 
+          type="number" 
+          min="1"
+        >
+  
+        <button type="button" id="calcularPerimetroTriangulo">
+          calcular el perímetro
+        </button>
+
+      </div>
+      <!-- end perimetro -->
+    </form>
+
+    <div class="resultado">
+      <p class="resultado__perimetro--triangulo">Perímetro: </p>
+    </div>
+
+    <form>
+        
+      <div class="area-triangulo">
+  
+        <label for="base">
+          Medida de la base:
+        </label>
+        <input 
+          id="base" 
+          type="number" 
+          min="1"
+        >
+
+        <label for="altura">
+          Medida de la altura:
+        </label>
+        <input 
+          id="altura" 
+          type="number" 
+          min="1"
+        >
+        <button type="button" id="calcularAreaTriangulo">
+          calcular el área
+        </button>
+
+      </div>
+      <!-- end area -->
+    </form>
+
+    <div class="resultado">
+      <p class="resultado__area--triangulo">Área: </p>
+    </div>
+
+  </section>
+  <section class="triangulo__isoseles">
+    <h2>calcular altura de triangulo isóseles</h2>
+    <form>
+      <label for="iso-lado-1">Lado-1</label>
+      <input id="iso-lado-1" type="number" min="1">
+
+      <label for="iso-lado-2">Lado-2</label>
+      <input id="iso-lado-2" type="number" min="1">
+
+      <label for="iso-base">Base</label>
+      <input id="iso-base" type="number" min="1">
+      <button id="calcularAlturaTriangulo" type="button">calcular altura</button>
+    </form>
+    <div class="resultado">
+      <p class="resultado__altura-triangulo">Altura: </p>
+    </div>
+  </section>
+  <!-- end triágulo -->
+
+  <section>
+    <h2>Calcula el área y circuferencia de un círculo.</h2>
+
+    <form>
+
+      <label for="radio">
+        Medida de del radio
+      </label>
+      <input 
+        id="radio" 
+        type="number" 
+        min="1"
+      >
+      <button type="button" id="calcularCircuferenciaCirculo">
+        calcular el circuferencia
+      </button>
+
+      <button type="button" id="calcularAreaCirculo">
+        calcular el área
+      </button>
+
+    </form>
+    <div class="resultado">
+      <p class="resultado__perimetro--circulo">Circuferencia: </p>
+      <p class="resultado__area--circulo">Área: </p>
+    </div>
+  </section>
+
+  <script src="./figuras.js"></script>
+</body>
+</html>
